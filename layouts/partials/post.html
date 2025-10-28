@@ -1,0 +1,15 @@
+<div class="post">
+    <h2 class="id">{{ .Params.Icon }}</h2>
+    <div>
+        <h2>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </h2>
+        <span>{{ .Description }}</span>
+        <br><br>
+        <div class="flex">
+            {{ range .Params.tags }}
+            <a href="/tags/{{ . | urlize }}" class="tag">#{{ . }}</a>
+            {{ end }}
+        </div>
+    </div>
+</div>

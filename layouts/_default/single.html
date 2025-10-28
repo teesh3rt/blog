@@ -1,0 +1,9 @@
+{{ define "main" }}
+<a href="/">&lt;-- head back home</a>
+<br>
+<h1>{{ .Title }} <span class="id">({{ .Date.Format "02.01.2006" }})</span></h1>
+<p>{{ .Description }}</p>
+<br>
+
+{{ .Content }}
+{{ end }}

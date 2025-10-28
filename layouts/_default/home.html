@@ -1,0 +1,26 @@
+{{ define "main" }}
+<div class="center">
+    <br>
+    <h1>{{ .Site.Title }}</h1>
+    <p>welcome to my little place on the internet.</p>
+    <br>
+    <hr>
+    <br>
+</div>
+
+<div class="grid2">
+    <div>
+        <h1>recents:</h1>
+        {{ range first 5 (sort (where .Site.RegularPages "Section" "blog") "Date" "desc") }}
+        {{ partial "post.html" . }}
+        {{ end }}
+    </div>
+    <div>
+        <h1>featured:</h1>
+        {{ range first 5 (sort (where (where .Site.RegularPages "Section" "blog") ".Params.featured" true) "Date"
+        "desc") }}
+        {{ partial "post.html" . }}
+        {{ end }}
+    </div>
+</div>
+{{ end }}

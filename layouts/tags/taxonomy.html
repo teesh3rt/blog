@@ -1,0 +1,11 @@
+{{ define "main" }}
+<a href="/">&lt;-- head back home</a>
+
+<h1>search for <span class="tag">all tags</span>:</h1>
+
+<div>
+    {{ range .Data.Terms.Alphabetical }}
+    <a href="{{ .Page.RelPermalink }}" class="tag">#{{ .Page.Title | lower }}</a>
+    {{ end }}
+</div>
+{{ end }}

@@ -1,0 +1,12 @@
+languageCode = 'en-us'
+title = 'teeshs terminal'
+
+[taxonomies]
+tag = 'tags'
+
+[markup.highlight]
+lineNos = true
+style = "modus-vivendi"
+
+[params]
+description = "a blog about everything, run by teesh3rt"

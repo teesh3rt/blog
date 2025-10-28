@@ -1,0 +1,23 @@
+{{ define "main" }}
+<a href="/tags/">&lt;-- back to all tags</a>
+
+<h1>search for <span class="tag">#{{ .Title | lower }}</span></h1>
+
+{{ range .Paginator.Pages }}
+{{ partial "post.html" . }}
+{{ end }}
+
+{{ if gt .Paginator.TotalPages 1 }}
+<div class="paginator">
+    {{ if .Paginator.HasPrev }}
+    <a href="{{ .Paginator.Prev.URL }}" class="prev">Previous</a>
+    {{ end }}
+
+    <span>Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}</span>
+
+    {{ if .Paginator.HasNext }}
+    <a href="{{ .Paginator.Next.URL }}" class="next">Next</a>
+    {{ end }}
+</div>
+{{ end }}
+{{ end }}
