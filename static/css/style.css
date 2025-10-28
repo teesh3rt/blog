@@ -20,6 +20,10 @@ body {
     text-align: center;
 }
 
+.disabled {
+    color: var(--disabled-color);
+}
+
 .center_a_div {
     position: absolute;
     top: 0;
@@ -45,6 +49,14 @@ body {
     .grid2 {
         grid-template-columns: 1fr;
     }
+}
+
+.paginator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    margin: 2em 0;
 }
 
 .post {
